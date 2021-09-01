@@ -38,7 +38,7 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop3'
+        ArtifactName: 'drop4/target'
         publishLocation: 'Container'
         
 - stage: Deploy
@@ -61,4 +61,4 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: '$(Pipeline.Workspace)/drop3/**/target/*.?(war|jar)'
+              package: '$(Pipeline.Workspace)/drop4/**/target/*.?(war|jar)'
